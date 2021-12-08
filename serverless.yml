@@ -1,0 +1,38 @@
+service: customauthorizer
+frameworkVersion: '2'
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: python3.6
+  stage: dev
+  region: us-east-1
+ 
+functions:
+  ca: 
+    handler: authorizer.handler
+   
+  mock:
+    handler: handler.test
+    events:
+      - http:
+          method: get
+          cors: false
+          path: /test
+          authorizer:
+            name: ca
+            identitySource: method.request.header.username, method.request.header.methodARN
+            resultTtlInSeconds: 0
+            type: request
+
+
+# >>> arn = "arn:aws:execute-api:*:*:*/dev/*"
+# >>> e = {"methodArn":arn,"username":"si3mshady"}
+# >>> d = requests.get(url=url, headers=e)
+
+
+# https://lh5.googleusercontent.com/HRotc_uQ6JV7G_vfULeeuxfNuSfhOOLJMy9Su65UXrMMTOgVPbtAYS5Ylzf6986TT6dbPQlADc3M6vuV3Tk4MjenNpYGcUZ9a6YTD0VY_klMQwcbaKYUvo2m4IBGtVIaKJMvH_4U
+
+
