@@ -27,12 +27,11 @@ functions:
             resultTtlInSeconds: 0
             type: request
 
-
+# >>> url  = "https://k4vuqbroub.execute-api.us-east-1.amazonaws.com/dev/test"*"
 # >>> arn = "arn:aws:execute-api:*:*:*/dev/*"
 # >>> e = {"methodArn":arn,"username":"si3mshady"}
 # >>> d = requests.get(url=url, headers=e)
 
 
-# https://lh5.googleusercontent.com/HRotc_uQ6JV7G_vfULeeuxfNuSfhOOLJMy9Su65UXrMMTOgVPbtAYS5Ylzf6986TT6dbPQlADc3M6vuV3Tk4MjenNpYGcUZ9a6YTD0VY_klMQwcbaKYUvo2m4IBGtVIaKJMvH_4U
 
 
