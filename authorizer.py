@@ -47,4 +47,8 @@ def handler(event,context):
     print(event)
     ra = RequestAuthorizer()
     return ra.parse_req_obj(**event)
-    
+
+#Elliott Arnold 
+#Custom Authorizer Practice p2
+#12-7-21
+#7-11
